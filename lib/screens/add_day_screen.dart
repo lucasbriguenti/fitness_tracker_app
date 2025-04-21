@@ -21,8 +21,7 @@ class _AddDayPageState extends State<AddDayPage> {
       final newDay = Day(name: _nameController.text, exercicies: []);
       await _dayRepository.insertDay(newDay);
 
-      if (context.mounted) {
-        // ignore: use_build_context_synchronously
+      if (mounted) {
         Navigator.pop(context);
       }
     }

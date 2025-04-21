@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class FitnessTrackerInputFormField extends StatelessWidget {
   final TextEditingController controller;
@@ -9,6 +10,7 @@ class FitnessTrackerInputFormField extends StatelessWidget {
   final int maxLines;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final List<TextInputFormatter>? inputFormatters;
 
   const FitnessTrackerInputFormField({
     super.key,
@@ -20,6 +22,7 @@ class FitnessTrackerInputFormField extends StatelessWidget {
     this.maxLines = 1,
     this.prefixIcon,
     this.suffixIcon,
+    this.inputFormatters,
   });
 
   @override
@@ -30,6 +33,7 @@ class FitnessTrackerInputFormField extends StatelessWidget {
       obscureText: obscureText,
       maxLines: maxLines,
       validator: validator,
+      inputFormatters: inputFormatters,
       decoration: InputDecoration(
         labelText: label,
         filled: true,

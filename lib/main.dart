@@ -1,5 +1,7 @@
 import 'package:fitness_tracker/configs/get_it_configurator.dart';
 import 'package:fitness_tracker/screens/add_day_screen.dart';
+import 'package:fitness_tracker/screens/add_exercicies_screen.dart';
+import 'package:fitness_tracker/screens/add_exercicies_to_day_screen.dart';
 import 'package:fitness_tracker/screens/day_screen.dart';
 import 'package:fitness_tracker/screens/exercicies_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,13 +18,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fitness Tracker',
       debugShowCheckedModeBanner: false,
       initialRoute: '/days',
       routes: {
         '/exercicies': (ctx) => ExerciciesScreen(),
         '/days': (ctx) => const DayScreen(),
         '/add-days': (ctx) => const AddDayPage(),
+        '/add-exercicie': (ctx) => const AddExercicieScreen(),
+        '/add-exercicie-to-day': (ctx) => const AddExerciciesToDayScreen(),
       },
       theme: ThemeData(
         appBarTheme: AppBarTheme(

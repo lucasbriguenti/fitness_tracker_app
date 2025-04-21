@@ -63,6 +63,17 @@ class DayRepository {
     return dayId;
   }
 
+  Future insertExerciciesDays(int dayId, List<int> exerciseIds) async {
+    final db = await _database;
+
+    for (var exerciseId in exerciseIds) {
+      await db.insert('day_exercises', {
+        'day_id': dayId,
+        'exercise_id': exerciseId,
+      });
+    }
+  }
+
   Future<Day?> getDayById(int id) async {
     final db = await _database;
 

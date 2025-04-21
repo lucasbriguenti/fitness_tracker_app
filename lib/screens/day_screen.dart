@@ -74,9 +74,16 @@ class _DayScreenState extends State<DayScreen> {
                             ),
                             actions: [
                               TextButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   Navigator.pop(context);
-                                  // ação 1, por exemplo: editar
+                                  await Navigator.pushNamed(
+                                    context,
+                                    '/add-exercicie-to-day',
+                                    arguments: day,
+                                  );
+                                  setState(() {
+                                    _carregarDias();
+                                  });
                                 },
                                 child: const Text('Exercícios'),
                               ),

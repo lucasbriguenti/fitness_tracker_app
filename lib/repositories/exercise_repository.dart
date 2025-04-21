@@ -17,14 +17,15 @@ class ExerciseRepository {
 
     return await openDatabase(
       path,
-      version: 2,
+      version: 3,
       onCreate: (db, version) {
         return db.execute('''
           CREATE TABLE exercicies (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             description TEXT,
-            repetition INTEGER
+            repetition INTEGER,
+            interval INTEGER
           )
         ''');
       },

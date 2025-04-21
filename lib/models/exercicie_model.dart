@@ -3,12 +3,14 @@ class Exercicie {
   final String name;
   final String description;
   final int repetition;
+  final int interval;
 
   Exercicie({
     this.id,
     required this.name,
     required this.description,
     required this.repetition,
+    required this.interval,
   });
 
   Map<String, dynamic> toMap() {
@@ -16,6 +18,7 @@ class Exercicie {
       'name': name,
       'description': description,
       'repetition': repetition,
+      'interval': interval,
     };
     if (id != null) {
       map['id'] = id as int;
@@ -29,6 +32,7 @@ class Exercicie {
       name: map['name'],
       description: map['description'],
       repetition: map['repetition'],
+      interval: map['interval'],
     );
   }
 }
